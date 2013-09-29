@@ -6,15 +6,18 @@
 var express = require('express')
   , config = require('./config.js')
   , http = require('http')
+  , fs = require('fs')
   , path = require('path')
   , request = require('request')
   , crypto = require('crypto');
 
 var app = express();
+var chatLogFile = fs.createWriteStream('./logs/chat.log', {flags: 'a'});
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
+app.use(express.logger({stream: chatLogFile}));
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
