@@ -1,0 +1,15 @@
+{
+  "name": "node-chat-w-bot",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Wilson He <wilson.he@gmail.com>",
+  "description": "a nodejs chatroom app powered by express, socket.io",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.3.1",
+    "socket.io": "*",
+	"request":"*"
+  }
+}
